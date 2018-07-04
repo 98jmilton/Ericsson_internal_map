@@ -89,7 +89,7 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
                     img.setImageResource(R.drawable.ic_baselinearrow_drop_up24px);
                     return true;
                 case R.id.lang_ruby:
-                    Toast.makeText(getApplicationContext(), "Ruby got clicked", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Garfield got clicked", Toast.LENGTH_SHORT).show();
                     img.setImageResource(R.drawable.ic_baselinearrow_drop_up24px);
                     return true;
 
@@ -138,7 +138,7 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            // opens the qr scanner
             Intent intent = new Intent(GroundFloorFunctions.this, ScanActivity.class);
             startActivity(intent);
 
