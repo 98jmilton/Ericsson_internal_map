@@ -8,4 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Application theme. -->
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:popupMenuStyle">@style/AndroidSRC.PopupMenu</item>
+        <item name="android:itemTextAppearance">@style/AndroidSRC.TextAppearance</item>
+    </style>
+
+    <style name="AndroidSRC.PopupMenu" parent="android:Widget.Holo.Light.ListPopupWindow">
+        <item name="android:popupBackground">@color/colorAccent</item>
+    </style>
+
+    <style name="AndroidSRC.TextAppearance" parent="@android:style/Widget.Holo.Light.TextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>

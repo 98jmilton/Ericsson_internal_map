@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ezmilja.ericsson_internal_map">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,9 +19,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu" />
-        <activity android:name=".GroundFloorFunctions" />
+        <activity
+            android:name=".GroundFloorFunctions"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".ScanActivity" />
-        <activity android:name=".ZonesMenu"></activity>
+        <activity android:name=".ZonesMenu" />
+        <activity android:name=".CurrentLocation"></activity>
     </application>
 
 </manifest>
