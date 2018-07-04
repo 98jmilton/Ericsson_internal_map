@@ -7,42 +7,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.otaliastudios.zoom.ZoomImageView;
+import com.otaliastudios.zoom.ZoomLogger;
+
 public class MainMenu extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ZoomLogger.setLogLevel(ZoomLogger.LEVEL_INFO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        Button btn = (Button) findViewById(R.id.btnMap);
-        btn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), GroundFloorFunctions.class);
-                startActivityForResult(myIntent, 0);
-            }
-
-        });
-
-        Button btn1 = (Button) findViewById(R.id.btnScan);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainMenu.this, ScanActivity.class);
-                startActivity(intent);
-            }
-        });
+        //final ZoomImageView zoomImage = findViewById(R.id.zoom_layout);
+        //zoomImage.setVisibility(View.VISIBLE);
+        int resource_id = getResources().getIdentifier("ecm", "drawable", getPackageName());
+        //zoomImage.setImageResource(resource_id);
 
 
-        Button btn2 = (Button) findViewById(R.id.btnZones);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), ZonesMenu.class);
-                startActivityForResult(myIntent, 0);
-            }
-
-        });
     }
 }
 

@@ -43,7 +43,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         //locatiovTV.setOnClickListener();
 
         try {
-            final Intent intent = new Intent(ScanActivity.this, CurrentLocation.class);
+            final Intent intent = new Intent(ScanActivity.this, GroundFloorFunctions.class);
             intent.putExtra(Constants.SCAN_BAR_TEST_KEY, rawResult.getText());
             startActivity(intent);
         } catch (Exception e) {
