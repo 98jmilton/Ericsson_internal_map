@@ -19,12 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu" />
-        <activity
-            android:name=".GroundFloorFunctions"
-            android:theme="@style/AppTheme2" />
         <activity android:name=".ScanActivity" />
         <activity android:name=".ZonesMenu" />
-        <activity android:name=".CurrentLocation"></activity>
+        <activity android:name=".CurrentLocation" />
+        <activity
+            android:name=".GroundFloorFunctions"
+            android:label="@string/title_activity_ground_floor_functions"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
