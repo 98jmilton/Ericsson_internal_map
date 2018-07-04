@@ -29,6 +29,23 @@ public class SplashScreen extends AppCompatActivity {
             ActivityCompat
                     .requestPermissions(SplashScreen.this, new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_ASK_PERMISSIONS);
         }
+        else{
+
+            Thread myThread = new Thread() {
+                @Override
+                public void run() {
+                    try {
+                        sleep(2000);
+                        Intent intent = new Intent(getApplicationContext(),MainMenu.class);
+                        startActivity(intent);
+                        finish();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+            myThread.start();
+        }
     }
 
 
