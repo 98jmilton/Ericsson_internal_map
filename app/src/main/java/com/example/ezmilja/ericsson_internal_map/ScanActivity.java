@@ -50,13 +50,6 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
             e.printStackTrace();
         }
 
-
-
-
-
-
-
-
         //onBackPressed();
 
         // If you would like to resume scanning, call this method below:

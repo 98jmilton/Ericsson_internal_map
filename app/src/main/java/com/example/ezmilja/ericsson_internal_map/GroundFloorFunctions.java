@@ -1,9 +1,15 @@
 package com.example.ezmilja.ericsson_internal_map;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,45 +19,79 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 public class GroundFloorFunctions extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
     private PopupMenu popupMenu;
     ImageButton img;
 
+
+
+    //open/close navigation drawer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ground_floor_functions);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    //item functions within navigation drawer
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
 
+        if (id == R.id.nav_camera) {
+            // opens the qr scanner
+            Intent intent = new Intent(GroundFloorFunctions.this, ScanActivity.class);
+            startActivity(intent);
 
+        } else if (id == R.id.nav_coffee) {
+
+        } else if (id == R.id.nav_toilets) {
+
+        } else if (id == R.id.nav_printer) {
+
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    //popup menu
     public void onClick(View anchor) {
         // TODO Auto-generated method stub
 
         // Image switching when arrow is clicked
-        img= (ImageButton) findViewById(R.id.imageButton);
+        img= findViewById(R.id.imageButton);
         img.setImageResource(R.drawable.ic_baselinearrow_drop_down24px);
 
-        popupMenu = new PopupMenu(GroundFloorFunctions.this, anchor);
+        popupMenu = new PopupMenu(GroundFloorFunctions.this, anchor, Gravity.CENTER);
         popupMenu.setOnDismissListener(new OnDismissListener());
         popupMenu.setOnMenuItemClickListener(new OnMenuItemClickListener());
         popupMenu.inflate(R.menu.popup_menu);
         popupMenu.show();
+
     }
 
     private class OnDismissListener implements PopupMenu.OnDismissListener {
@@ -60,17 +100,12 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         public void onDismiss(PopupMenu menu) {
             // TODO Auto-generated method stub
             img.setImageResource(R.drawable.ic_baselinearrow_drop_up24px);
-
         }
-
     }
 
     private class OnMenuItemClickListener implements
             PopupMenu.OnMenuItemClickListener
     {
-
-
-
 
         @Override
         public boolean onMenuItemClick(MenuItem item) {
@@ -92,28 +127,19 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
                     Toast.makeText(getApplicationContext(), "Garfield got clicked", Toast.LENGTH_SHORT).show();
                     img.setImageResource(R.drawable.ic_baselinearrow_drop_up24px);
                     return true;
-
             }
             return false;
         }
     }
 
-
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.ground_floor_functions, menu);
-        return true;
     }
 
     @Override
@@ -129,29 +155,5 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // opens the qr scanner
-            Intent intent = new Intent(GroundFloorFunctions.this, ScanActivity.class);
-            startActivity(intent);
-
-        } else if (id == R.id.nav_coffee) {
-
-        } else if (id == R.id.nav_toilets) {
-
-        } else if (id == R.id.nav_printer) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }

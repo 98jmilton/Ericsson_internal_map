@@ -51,6 +51,8 @@
         android:onClick="onClick"
         android:visibility="visible"
         app:srcCompat="@drawable/ic_baselinearrow_drop_up24px"
+        tools:ignore="VectorDrawableCompat"/>
+
         tools:ignore="VectorDrawableCompat" />
 
 </RelativeLayout>

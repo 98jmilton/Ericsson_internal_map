@@ -7,7 +7,6 @@
     >
 
     <item
-
         android:id="@+id/lang_java"
         app:showAsAction="ifRoom|withText"
         android:title="Java"
@@ -18,7 +17,6 @@
         android:title="Android"
         android:visible="true"/>
     <item
-
         android:id="@+id/lang_ruby"
         android:background="@color/colorPrimaryDark"
         android:title="Ruby"

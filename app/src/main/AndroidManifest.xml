@@ -20,12 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu" />
         <activity
             android:name=".GroundFloorFunctions"
             android:theme="@style/AppTheme2" />
         <activity android:name=".ScanActivity" />
-        <activity android:name=".CurrentLocation"></activity>
     </application>
 
 </manifest>
