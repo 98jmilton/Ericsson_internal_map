@@ -19,12 +19,6 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        //final ZoomImageView zoomImage = findViewById(R.id.zoom_layout);
-        //zoomImage.setVisibility(View.VISIBLE);
-        int resource_id = getResources().getIdentifier("ecm", "drawable", getPackageName());
-        //zoomImage.setImageResource(resource_id);
-
-
     }
 }
 

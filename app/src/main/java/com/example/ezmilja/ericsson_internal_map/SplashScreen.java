@@ -36,7 +36,7 @@ public class SplashScreen extends AppCompatActivity {
                 public void run() {
                     try {
                         sleep(2000);
-                        Intent intent = new Intent(getApplicationContext(),MainMenu.class);
+                        Intent intent = new Intent(getApplicationContext(),GroundFloorFunctions.class);
                         startActivity(intent);
                         finish();
                     } catch (InterruptedException e) {
@@ -64,7 +64,7 @@ public class SplashScreen extends AppCompatActivity {
                         public void run() {
                             try {
                                 sleep(2000);
-                                Intent intent = new Intent(getApplicationContext(),MainMenu.class);
+                                Intent intent = new Intent(getApplicationContext(),GroundFloorFunctions.class);
                                 startActivity(intent);
                                 finish();
                             } catch (InterruptedException e) {
@@ -87,7 +87,7 @@ public class SplashScreen extends AppCompatActivity {
                             public void run() {
                                 try {
                                     sleep(2000);
-                                    Intent intent = new Intent(getApplicationContext(),MainMenu.class);
+                                    Intent intent = new Intent(getApplicationContext(),GroundFloorFunctions.class);
                                     startActivity(intent);
                                     finish();
                                 } catch (InterruptedException e) {
@@ -103,5 +103,4 @@ public class SplashScreen extends AppCompatActivity {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
-
-}
+    }
