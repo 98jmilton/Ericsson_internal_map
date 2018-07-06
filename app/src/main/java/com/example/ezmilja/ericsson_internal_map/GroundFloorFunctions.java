@@ -36,7 +36,7 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
     ImageButton img;
     ListView searchlistitems;
     ArrayAdapter<String> adapter;
-boolean searchmenuopen;
+public boolean searchmenuopen=false;
     String X;
 
     //open/close navigation drawer
@@ -98,7 +98,6 @@ boolean searchmenuopen;
         inflater.inflate(R.menu.searchmenu, menu);
         MenuItem item = menu.findItem(R.id.searchlist);
         final SearchView searchView = (SearchView)item.getActionView();
-        searchmenuopen = true;
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
@@ -118,17 +117,15 @@ boolean searchmenuopen;
 
                 String addText = "";
                 addText +=s;
-
                 if (addText.length() > 0) {
                     adapter.getFilter().filter(s);
                     searchlistitems.setVisibility(View.VISIBLE);
-                    searchmenuopen = false;
+                    searchmenuopen = true;
                     return false;
                 }
                 else {
                         searchlistitems.setVisibility(View.INVISIBLE);
                         searchmenuopen = false;
-
                 }
                 return true;
             }
@@ -220,11 +217,12 @@ boolean searchmenuopen;
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-
-        } else if (searchmenuopen = true) {
+        }
+        else if (searchmenuopen == true) {
             searchlistitems.setVisibility(View.INVISIBLE);
-
-        } else {
+            searchmenuopen = false;
+        }
+         else {
             super.onBackPressed();
         }
     }
