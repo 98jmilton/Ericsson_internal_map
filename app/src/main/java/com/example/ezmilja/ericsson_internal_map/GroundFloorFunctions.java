@@ -36,7 +36,7 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
     ImageButton img;
     ListView searchlistitems;
     ArrayAdapter<String> adapter;
-
+boolean searchmenuopen;
     String X;
 
     //open/close navigation drawer
@@ -62,6 +62,8 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
                 Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
                         Toast.LENGTH_SHORT).show();
                 searchlistitems.setVisibility(View.INVISIBLE);
+                searchmenuopen = false;
+
             }
 
         });
@@ -87,6 +89,7 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
     }
 
 
+
     //Add List of rooms to search bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -95,13 +98,17 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         inflater.inflate(R.menu.searchmenu, menu);
         MenuItem item = menu.findItem(R.id.searchlist);
         final SearchView searchView = (SearchView)item.getActionView();
+        searchmenuopen = true;
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+
 
             //using the enter key in search bar
             @Override
             public boolean onQueryTextSubmit(String s) {
                 searchlistitems.setVisibility(View.INVISIBLE);
+                searchmenuopen = false;
                 return false;
             }
 
@@ -115,10 +122,13 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
                 if (addText.length() > 0) {
                     adapter.getFilter().filter(s);
                     searchlistitems.setVisibility(View.VISIBLE);
+                    searchmenuopen = false;
                     return false;
                 }
                 else {
                         searchlistitems.setVisibility(View.INVISIBLE);
+                        searchmenuopen = false;
+
                 }
                 return true;
             }
@@ -210,6 +220,10 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+
+        } else if (searchmenuopen = true) {
+            searchlistitems.setVisibility(View.INVISIBLE);
+
         } else {
             super.onBackPressed();
         }
@@ -226,7 +240,6 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
