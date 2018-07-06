@@ -11,33 +11,11 @@
     >
 
 
-    <com.otaliastudios.zoom.ZoomLayout
-        android:id="@+id/zoom_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:scrollbars="horizontal|vertical"
-        app:hasClickableChildren="true"
-        app:horizontalPanEnabled="true"
-        app:verticalPanEnabled="true"
-        app:zoomEnabled="true">
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="1589dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:src="@drawable/ecm2" />
-
-        </RelativeLayout>
-    </com.otaliastudios.zoom.ZoomLayout>
 
     <ImageButton
         android:id="@+id/imageButton"
