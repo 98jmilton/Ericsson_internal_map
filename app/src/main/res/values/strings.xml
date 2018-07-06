@@ -11,15 +11,30 @@
     <string name="search_hint">Search Me</string>
 
     <string-array name="rooms">
-        <item>Nuuk</item>
-        <item>Reykjavik</item>
+        <item>Clear All</item>
+        <item>Anchorage</item>
+        <item>Berlin</item>
+        <item>Brasilia</item>
+        <item>Buenos Aires</item>
+        <item>Canberra</item>
+        <item>Cape Town</item>
+        <item>Demo Room</item>
+        <item>Helsinki</item>
+        <item>Honolulu</item>
+        <item>Jakarta</item>
+        <item>Kiev</item>
+        <item>Kuala Lumpur</item>
         <item>Lars Magnus</item>
-
-
-
-
+        <item>Moscow</item>
+        <item>Nuuk</item>
+        <item>Ottowa</item>
+        <item>Paris</item>
+        <item>Reykjavik</item>
+        <item>Rome</item>
+        <item>Stockholm</item>
+        <item>Tokyo</item>
+        <item>Warsaw</item>
+        <item>Washington DC</item>
+        <item>Wellington</item>
     </string-array>
-
-
-
 </resources>

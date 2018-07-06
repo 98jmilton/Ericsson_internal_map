@@ -20,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.SearchView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
@@ -36,12 +37,14 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
     ListView searchlistitems;
     ArrayAdapter<String> adapter;
 
+    String X;
 
     //open/close navigation drawer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ground_floor_functions);
+
 
         //suggestion list for searching
         searchlistitems=(ListView) findViewById(R.id.searchlistitems);
@@ -52,14 +55,13 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         );
         searchlistitems.setAdapter(adapter);
 
-
         // WHEN AN ITEM IS CLICKED ON THE LISTVIEW
         searchlistitems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
                 // When clicked, show a toast with the TextView text
                 Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
                         Toast.LENGTH_SHORT).show();
-
+                searchlistitems.setVisibility(View.INVISIBLE);
             }
 
         });
@@ -80,8 +82,12 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
+
+    //Add List of rooms to search bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -92,35 +98,30 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
-
+            //using the enter key in search bar
             @Override
             public boolean onQueryTextSubmit(String s) {
                 searchlistitems.setVisibility(View.INVISIBLE);
                 return false;
             }
 
-
+            //typing/deleting in search bar
             @Override
             public boolean onQueryTextChange(String s) {
+
                 String addText = "";
                 addText +=s;
 
                 if (addText.length() > 0) {
-
                     adapter.getFilter().filter(s);
                     searchlistitems.setVisibility(View.VISIBLE);
                     return false;
                 }
-                else
-                    {
-
+                else {
                         searchlistitems.setVisibility(View.INVISIBLE);
                 }
                 return true;
             }
-
-
-
         });
         return super.onCreateOptionsMenu(menu);
     }
