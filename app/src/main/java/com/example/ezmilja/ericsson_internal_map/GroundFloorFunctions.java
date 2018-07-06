@@ -3,6 +3,8 @@ package com.example.ezmilja.ericsson_internal_map;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,9 +13,16 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.SearchView;
 import android.widget.Toast;
+import java.util.ArrayList;
+import java.util.Arrays;
+import android.widget.SearchView.OnCloseListener;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
@@ -22,7 +31,8 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
 
     private PopupMenu popupMenu;
     ImageButton img;
-
+    ListView searchlist;
+    ArrayAdapter<String> adapter;
 
 
     //open/close navigation drawer
@@ -31,6 +41,19 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ground_floor_functions);
 
+        //suggestion list for searching
+        searchlist=(ListView) findViewById(R.id.searchlist);
+        ArrayList<String> arraySearch=new ArrayList<>();
+        arraySearch.addAll(Arrays.asList(getResources().getStringArray(R.array.rooms)));
+        adapter = new ArrayAdapter<String>(
+                GroundFloorFunctions.this,
+            android.R.layout.simple_list_item_1,
+            arraySearch
+        );
+        searchlist.setAdapter(adapter);
+
+
+        //navigation drawer toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -46,6 +69,49 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater= getMenuInflater();
+        inflater.inflate(R.menu.searchmenu, menu);
+        MenuItem item = menu.findItem(R.id.searchlist);
+        final SearchView searchView = (SearchView)item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                searchlist.setVisibility(View.INVISIBLE);
+                return false;
+            }
+
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                String addText = "";
+                addText +=s;
+
+                if (addText.length() > 0) {
+
+                    adapter.getFilter().filter(s);
+                    searchlist.setVisibility(View.VISIBLE);
+                    return false;
+                }
+                else
+                    {
+
+                        searchlist.setVisibility(View.INVISIBLE);
+                }
+                return true;
+            }
+
+
+
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     //item functions within navigation drawer
