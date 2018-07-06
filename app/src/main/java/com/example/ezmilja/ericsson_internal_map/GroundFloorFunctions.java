@@ -14,11 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,13 +47,22 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         searchlist=(ListView) findViewById(R.id.searchlist);
         ArrayList<String> arraySearch=new ArrayList<>();
         arraySearch.addAll(Arrays.asList(getResources().getStringArray(R.array.rooms)));
-        adapter = new ArrayAdapter<String>(
-                GroundFloorFunctions.this,
-            android.R.layout.simple_list_item_1,
+        adapter = new ArrayAdapter<String>(GroundFloorFunctions.this, android.R.layout.simple_list_item_1,
             arraySearch
         );
         searchlist.setAdapter(adapter);
 
+
+        // WHEN AN ITEM IS CLICKED ON THE LISTVIEW
+        searchlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
+                // When clicked, show a toast with the TextView text
+                Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
+                        Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
 
         //navigation drawer toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
