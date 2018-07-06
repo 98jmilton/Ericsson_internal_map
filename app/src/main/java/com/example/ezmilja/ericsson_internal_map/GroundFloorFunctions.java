@@ -33,7 +33,7 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
 
     private PopupMenu popupMenu;
     ImageButton img;
-    ListView searchlist;
+    ListView searchlistitems;
     ArrayAdapter<String> adapter;
 
 
@@ -44,17 +44,17 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
         setContentView(R.layout.activity_ground_floor_functions);
 
         //suggestion list for searching
-        searchlist=(ListView) findViewById(R.id.searchlist);
+        searchlistitems=(ListView) findViewById(R.id.searchlistitems);
         ArrayList<String> arraySearch=new ArrayList<>();
         arraySearch.addAll(Arrays.asList(getResources().getStringArray(R.array.rooms)));
         adapter = new ArrayAdapter<String>(GroundFloorFunctions.this, android.R.layout.simple_list_item_1,
             arraySearch
         );
-        searchlist.setAdapter(adapter);
+        searchlistitems.setAdapter(adapter);
 
 
         // WHEN AN ITEM IS CLICKED ON THE LISTVIEW
-        searchlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        searchlistitems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
                 // When clicked, show a toast with the TextView text
                 Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
@@ -95,7 +95,7 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
 
             @Override
             public boolean onQueryTextSubmit(String s) {
-                searchlist.setVisibility(View.INVISIBLE);
+                searchlistitems.setVisibility(View.INVISIBLE);
                 return false;
             }
 
@@ -108,13 +108,13 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
                 if (addText.length() > 0) {
 
                     adapter.getFilter().filter(s);
-                    searchlist.setVisibility(View.VISIBLE);
+                    searchlistitems.setVisibility(View.VISIBLE);
                     return false;
                 }
                 else
                     {
 
-                        searchlist.setVisibility(View.INVISIBLE);
+                        searchlistitems.setVisibility(View.INVISIBLE);
                 }
                 return true;
             }
