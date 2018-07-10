@@ -2,6 +2,7 @@ package com.example.ezmilja.ericsson_internal_map;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,31 +14,54 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Arrays;
-import android.widget.SearchView.OnCloseListener;
+import com.otaliastudios.zoom.ZoomLayout;
+import com.otaliastudios.zoom.ZoomLogger;
 
-import com.davemorrissey.labs.subscaleview.ImageSource;
-import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
+import static android.widget.Toast.LENGTH_LONG;
 
 public class GroundFloorFunctions extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    public int visiblered = 0;
+    public int visibleyellow= 0;
+    public int visibleblue= 0;
+    public int visiblegreen= 0;
+    public int visibleorange = 0;
+    public int visiblepurple= 0;
+    public int visibleteal= 0;
+    public int visiblepink= 0;
+    public int visiblecyan= 0;
+
+    public String roomName = "";
+    public int height=0;
+    public int width=0;
 
     private PopupMenu popupMenu;
     ImageButton img;
     ListView searchlistitems;
     ArrayAdapter<String> adapter;
 public boolean searchmenuopen=false;
-    String X;
+
+    ImageButton greenPin;
+    ImageButton redPin;
+    ImageButton yellowPin;
+    ImageButton bluePin;
+    ImageButton orangePin;
+    ImageButton purplePin;
+    ImageButton pinkPin;
+    ImageButton cyanPin;
+    ImageButton tealPin;
+
 
     //open/close navigation drawer
     @Override
@@ -46,35 +70,120 @@ public boolean searchmenuopen=false;
         setContentView(R.layout.activity_ground_floor_functions);
 
 
-        //suggestion list for searching
-        searchlistitems=(ListView) findViewById(R.id.searchlistitems);
-        ArrayList<String> arraySearch=new ArrayList<>();
-        arraySearch.addAll(Arrays.asList(getResources().getStringArray(R.array.rooms)));
-        adapter = new ArrayAdapter<String>(GroundFloorFunctions.this, android.R.layout.simple_list_item_1,
-            arraySearch
-        );
-        searchlistitems.setAdapter(adapter);
-
-        // WHEN AN ITEM IS CLICKED ON THE LISTVIEW
-        searchlistitems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
-                // When clicked, show a toast with the TextView text
-                Toast.makeText(getApplicationContext(), ((TextView) view).getText(),
-                        Toast.LENGTH_SHORT).show();
-                searchlistitems.setVisibility(View.INVISIBLE);
-                searchmenuopen = false;
-
-            }
-
-        });
+        visiblered = 0;
+        visibleyellow = 0;
+        visibleblue = 0;
+        visiblegreen = 0;
+        visibleorange = 0;
+        visiblepurple = 0;
+        visibleteal = 0;
+        visiblepink = 0;
+        visiblecyan = 0;
 
         //navigation drawer toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        SubsamplingScaleImageView imageView = (SubsamplingScaleImageView)findViewById(R.id.imageView);
-        imageView.setImage(ImageSource.resource(R.drawable.map));
+        greenPin    =(ImageButton) findViewById(R.id.pin_green);
+        /*redPin      =(ImageButton) findViewById(R.id.pin_red);
+        yellowPin   =(ImageButton) findViewById(R.id.pin_yellow);
+        bluePin     =(ImageButton) findViewById(R.id.pin_blue);
+        orangePin   =(ImageButton) findViewById(R.id.pin_orange);
+        purplePin   =(ImageButton) findViewById(R.id.pin_purple);
+        pinkPin     =(ImageButton) findViewById(R.id.pin_pink);
+        cyanPin     =(ImageButton) findViewById(R.id.pin_cyan);
+        tealPin     =(ImageButton) findViewById(R.id.pin_teal);*/
+
+        //GREENPIN
+        greenPin.setVisibility(View.INVISIBLE);
+        greenPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+        public void onClick(View v) {
+            greenPin.setVisibility(View.INVISIBLE);
+            visiblegreen = 0;
+        }
+        });
+
+        //REDPIN
+        redPin.setVisibility(View.INVISIBLE);
+        redPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redPin.setVisibility(View.INVISIBLE);
+                visiblered = 0;
+            }
+        });
+
+        //YELLOWPIN
+        yellowPin.setVisibility(View.INVISIBLE);
+        yellowPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                yellowPin.setVisibility(View.INVISIBLE);
+                visibleyellow = 0;
+            }
+        });
+
+        //BLUEPIN
+        bluePin.setVisibility(View.INVISIBLE);
+        bluePin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bluePin.setVisibility(View.INVISIBLE);
+                visibleblue = 0;
+            }
+        });
+
+        //ORANGEPIN
+        orangePin.setVisibility(View.INVISIBLE);
+        orangePin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                orangePin.setVisibility(View.INVISIBLE);
+                visibleorange = 0;
+            }
+        });
+
+        //PURPLEPIN
+        purplePin.setVisibility(View.INVISIBLE);
+        purplePin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                purplePin.setVisibility(View.INVISIBLE);
+                visiblepurple = 0;
+            }
+        });
+
+        //PINKPIN
+        pinkPin.setVisibility(View.INVISIBLE);
+        pinkPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pinkPin.setVisibility(View.INVISIBLE);
+                visiblepink = 0;
+            }
+        });
+
+        //CYANPIN
+        cyanPin.setVisibility(View.INVISIBLE);
+        cyanPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cyanPin.setVisibility(View.INVISIBLE);
+                visiblecyan = 0;
+            }
+        });
+
+        //TEALPIN
+        tealPin.setVisibility(View.INVISIBLE);
+        tealPin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tealPin.setVisibility(View.INVISIBLE);
+                visibleteal = 0;
+            }
+        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -84,8 +193,6 @@ public boolean searchmenuopen=false;
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
     }
 
 
@@ -99,9 +206,27 @@ public boolean searchmenuopen=false;
         MenuItem item = menu.findItem(R.id.searchlist);
         final SearchView searchView = (SearchView)item.getActionView();
 
+        //suggestion list for searching
+        searchlistitems=(ListView) findViewById(R.id.searchlistitems);
+        ArrayList<String> arraySearch=new ArrayList<>();
+        arraySearch.addAll(Arrays.asList(getResources().getStringArray(R.array.rooms)));
+        adapter = new ArrayAdapter<String>(GroundFloorFunctions.this, android.R.layout.simple_list_item_1,
+                arraySearch
+        );
+        searchlistitems.setAdapter(adapter);
+
+        // WHEN AN ITEM IS CLICKED ON THE LISTVIEW
+        searchlistitems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
+                // When clicked, show a toast with the TextView text
+                searchlistitems.setVisibility(View.INVISIBLE);
+                roomName= (String) ((TextView) view).getText();
+                roomSwitch();
+            }
+
+        });
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
-
 
             //using the enter key in search bar
             @Override
@@ -114,10 +239,11 @@ public boolean searchmenuopen=false;
             //typing/deleting in search bar
             @Override
             public boolean onQueryTextChange(String s) {
-
                 String addText = "";
                 addText +=s;
+
                 if (addText.length() > 0) {
+
                     adapter.getFilter().filter(s);
                     searchlistitems.setVisibility(View.VISIBLE);
                     searchmenuopen = true;
@@ -240,4 +366,284 @@ public boolean searchmenuopen=false;
         }
         return super.onOptionsItemSelected(item);
     }
+
+    void jeff(){
+
+        Toast.makeText(this,roomName,LENGTH_LONG).show();
+
+    }
+
+    public void roomSwitch(){
+
+        if ( roomName.equals("Anchorage")){
+            roomName = "anchorage";
+            height = 0;
+            width = 0;
+
+            isfree();
+        }
+
+        else if ( roomName.equals( "Berlin")){
+
+            roomName = "berlin";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Brasilia")){
+
+            roomName = "brasilia";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Buenosaires")){
+
+            roomName = "buenosaires";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Canberra")){
+
+            roomName = "canberra";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Capetown")){
+
+            roomName = "capetown";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Demoroom")){
+
+            roomName = "demoroom";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Helsinki")){
+
+            roomName = "helsinki";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Honolulu")){
+
+            roomName = "honolulu";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Jakarta")){
+
+            roomName = "jakarta";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Kiev")){
+
+            roomName = "kiev";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Kualalumpur")){
+
+            roomName = "kualalumpur";
+            height = 0;
+            width = 0;
+
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Larsmagnus")){
+
+            roomName = "larsmagnus";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Moscow")){
+
+            roomName = "moscow";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Nuuk")){
+
+            roomName = "nuuk";
+            height = 380;
+            width = 185;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Ottowa")){
+
+            roomName = "ottowa";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Paris")){
+
+            roomName = "paris";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Reykjavik")){
+
+            roomName = "reykjavik";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Rome")){
+
+            roomName = "rome";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Stockholm")){
+
+            roomName = "stockholm";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Tokyo")){
+
+            roomName = "tokyo";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Warsaw")){
+
+            roomName = "warsaw";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Washingtondc")){
+
+            roomName = "washingtondc";
+            height = 0;
+            width = 0;
+            isfree() ;
+        }
+
+        else if ( roomName.equals( "Wellington")){
+
+            roomName = "wellington";
+            height = 0;
+            width = 0;
+            isfree();
+        }
+        else{
+
+            Toast.makeText(this,"Shit",LENGTH_LONG).show();
+        }
+
+    }
+
+
+    public void isfree(){
+        if(visiblegreen == 0){
+
+            int greenHeigth = height;
+            int greenWidth  = width;
+
+
+            greenPin.setVisibility(View.VISIBLE);
+
+            visiblegreen = 1;
+        }
+        else if(visibleblue == 0){
+            int blueHeigth = height;
+            int blueWidth  = width;
+
+
+            visibleblue = 1;
+        }
+        else if(visiblered == 0){
+            int redHeigth = height;
+            int redWidth  = width;
+
+
+            visiblered = 1;
+        }
+        else if(visibleyellow == 0){
+            int yellowHeigth = height;
+            int yellowWidth  = width;
+
+
+            visibleyellow = 1;
+        }
+        else if(visiblecyan == 0){
+            int cyanHeigth = height;
+            int cyanWidth  = width;
+
+
+            visiblecyan = 1;
+        }
+        else if(visibleorange == 0){
+            int orangeHeigth = height;
+            int orangeWidth  = width;
+
+
+            visibleorange = 1;
+        }
+        else if(visiblepink == 0){
+            int pinkHeigth = height;
+            int pinkWidth  = width;
+
+
+            visiblepink = 1;
+        }
+        else if(visibleteal == 0){
+            int tealHeigth = height;
+            int tealWidth  = width;
+
+
+            visibleteal = 1;
+        }
+        else if(visiblepurple == 0){
+            int purpleHeigth = height;
+            int purpleWidth  = width;
+
+
+            visiblepurple = 1;
+        }
+        else{}
+
+    }
+
 }
