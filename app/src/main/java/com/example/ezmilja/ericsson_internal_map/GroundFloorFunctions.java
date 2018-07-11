@@ -14,6 +14,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -104,7 +106,7 @@ public boolean searchmenuopen=false;
             visiblegreen = 0;
         }
         });
-
+/*
         //REDPIN
         redPin.setVisibility(View.INVISIBLE);
         redPin.setOnClickListener(new View.OnClickListener() {
@@ -184,7 +186,7 @@ public boolean searchmenuopen=false;
                 visibleteal = 0;
             }
         });
-
+*/
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -574,13 +576,18 @@ public boolean searchmenuopen=false;
 
     }
 
-
     public void isfree(){
         if(visiblegreen == 0){
 
             int greenHeigth = height;
             int greenWidth  = width;
 
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(greenWidth, greenHeigth, 0, 0);
+            greenPin.setLayoutParams(params);
 
             greenPin.setVisibility(View.VISIBLE);
 
