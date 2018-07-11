@@ -632,7 +632,15 @@ public boolean searchmenuopen=false;
 
     public void roomSwitch(){
 
-        if ( roomName.equals("Anchorage")){
+        if ( roomName.equals("Athlone")){
+            roomName = "athlone";
+            height = 465;
+            width = 677;
+
+            isfree();
+        }
+
+        else if ( roomName.equals("Anchorage")){
             roomName = "anchorage";
             height = 50;
             width = 50;
@@ -643,8 +651,8 @@ public boolean searchmenuopen=false;
         else if ( roomName.equals( "Berlin")){
 
             roomName = "berlin";
-            height = 100;
-            width = 100;
+            height = 500;
+            width = 1107;
             isfree() ;
         }
 
@@ -691,8 +699,8 @@ public boolean searchmenuopen=false;
         else if ( roomName.equals( "Helsinki")){
 
             roomName = "helsinki";
-            height = 400;
-            width = 400;
+            height = 300;
+            width = 1534;
             isfree() ;
         }
 
@@ -715,8 +723,8 @@ public boolean searchmenuopen=false;
         else if ( roomName.equals( "Kiev")){
 
             roomName = "kiev";
-            height = 550;
-            width = 550;
+            height = 500;
+            width = 1844;
             isfree() ;
         }
 
@@ -740,16 +748,16 @@ public boolean searchmenuopen=false;
         else if ( roomName.equals( "Moscow")){
 
             roomName = "moscow";
-            height = 0;
-            width = 0;
+            height = 300;
+            width = 1844;
             isfree() ;
         }
 
         else if ( roomName.equals( "Nuuk")){
 
             roomName = "nuuk";
-            height = 380;
-            width = 185;
+            height = 374;
+            width = 279;
             isfree() ;
         }
 
@@ -764,32 +772,32 @@ public boolean searchmenuopen=false;
         else if ( roomName.equals( "Paris")){
 
             roomName = "paris";
-            height = 0;
-            width = 0;
+            height = 739;
+            width = 685;
             isfree() ;
         }
 
         else if ( roomName.equals( "Reykjavik")){
 
             roomName = "reykjavik";
-            height = 0;
-            width = 0;
+            height = 850;
+            width = 279;
             isfree() ;
         }
 
         else if ( roomName.equals( "Rome")){
 
             roomName = "rome";
-            height = 0;
-            width = 0;
+            height = 500;
+            width = 1534;
             isfree() ;
         }
 
         else if ( roomName.equals( "Stockholm")){
 
             roomName = "stockholm";
-            height = 0;
-            width = 0;
+            height = 300;
+            width = 1107;
             isfree() ;
         }
 

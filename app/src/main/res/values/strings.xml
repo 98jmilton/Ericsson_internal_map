@@ -12,6 +12,7 @@
 
     <string-array name="rooms">
         <item>Clear All</item>
+        <item>Athlone</item>
         <item>Anchorage</item>
         <item>Berlin</item>
         <item>Brasilia</item>
