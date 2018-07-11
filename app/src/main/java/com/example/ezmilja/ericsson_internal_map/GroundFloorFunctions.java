@@ -359,11 +359,19 @@ public boolean searchmenuopen=false;
 
         } else if (id == R.id.nav_coffee) {
 
+            //viscoffee();
+
         } else if (id == R.id.nav_toilets) {
+
+           // vistoilets();
 
         } else if (id == R.id.nav_printer) {
 
+            //visprint();
+
         } else if (id ==R.id.nav_clear) {
+
+            //visclear();
 
         }
 
