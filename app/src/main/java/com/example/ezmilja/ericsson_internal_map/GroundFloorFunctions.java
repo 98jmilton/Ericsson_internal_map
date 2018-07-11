@@ -44,6 +44,14 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
     public int visiblepink= 0;
     public int visiblecyan= 0;
 
+    public int viscdock1 = 0;
+    public int viscdock2 = 0;
+    public int viscdock3 = 0;
+    public int viscdock4 = 0;
+    public int viscdock5 = 0;
+    public int viscdock6 = 0;
+    public int viscdock7 = 0;
+
     public String roomName = "";
     public int height=0;
     public int width=0;
@@ -64,6 +72,13 @@ public boolean searchmenuopen=false;
     ImageButton cyanPin;
     ImageButton tealPin;
 
+    ImageButton cdock1;
+    ImageButton cdock2;
+    ImageButton cdock3;
+    ImageButton cdock4;
+    ImageButton cdock5;
+    ImageButton cdock6;
+    ImageButton cdock7;
 
     //open/close navigation drawer
     @Override
@@ -71,31 +86,20 @@ public boolean searchmenuopen=false;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ground_floor_functions);
 
-
-        visiblered = 0;
-        visibleyellow = 0;
-        visibleblue = 0;
-        visiblegreen = 0;
-        visibleorange = 0;
-        visiblepurple = 0;
-        visibleteal = 0;
-        visiblepink = 0;
-        visiblecyan = 0;
-
         //navigation drawer toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         greenPin    =(ImageButton) findViewById(R.id.pin_green);
-        /*redPin      =(ImageButton) findViewById(R.id.pin_red);
+        redPin      =(ImageButton) findViewById(R.id.pin_red);
         yellowPin   =(ImageButton) findViewById(R.id.pin_yellow);
         bluePin     =(ImageButton) findViewById(R.id.pin_blue);
         orangePin   =(ImageButton) findViewById(R.id.pin_orange);
         purplePin   =(ImageButton) findViewById(R.id.pin_purple);
         pinkPin     =(ImageButton) findViewById(R.id.pin_pink);
         cyanPin     =(ImageButton) findViewById(R.id.pin_cyan);
-        tealPin     =(ImageButton) findViewById(R.id.pin_teal);*/
+        tealPin     =(ImageButton) findViewById(R.id.pin_teal);
 
         //GREENPIN
         greenPin.setVisibility(View.INVISIBLE);
@@ -106,7 +110,7 @@ public boolean searchmenuopen=false;
             visiblegreen = 0;
         }
         });
-/*
+
         //REDPIN
         redPin.setVisibility(View.INVISIBLE);
         redPin.setOnClickListener(new View.OnClickListener() {
@@ -186,7 +190,80 @@ public boolean searchmenuopen=false;
                 visibleteal = 0;
             }
         });
-*/
+
+        cdock1      =(ImageButton) findViewById(R.id.cdock1);
+        cdock2      =(ImageButton) findViewById(R.id.cdock2);
+        cdock3      =(ImageButton) findViewById(R.id.cdock3);
+        cdock4      =(ImageButton) findViewById(R.id.cdock4);
+        cdock5      =(ImageButton) findViewById(R.id.cdock5);
+        cdock6      =(ImageButton) findViewById(R.id.cdock6);
+        cdock7      =(ImageButton) findViewById(R.id.cdock7);
+
+        //Coffee dock 1
+        cdock1.setVisibility(View.INVISIBLE);
+        cdock1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cdock1.setVisibility(View.INVISIBLE);
+                viscdock1 = 0;
+            }
+        });
+        //Coffee dock 2
+        cdock2.setVisibility(View.INVISIBLE);
+        cdock2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cdock2.setVisibility(View.INVISIBLE);
+                viscdock2 = 0;
+            }
+        });
+        //Coffee dock 3
+        cdock3.setVisibility(View.INVISIBLE);
+        cdock3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cdock3.setVisibility(View.INVISIBLE);
+                viscdock3 = 0;
+            }
+        });
+        //Coffee dock 4
+        cdock4.setVisibility(View.INVISIBLE);
+        cdock4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cdock4.setVisibility(View.INVISIBLE);
+                viscdock4 = 0;
+            }
+        });
+        //Coffee dock 5
+        cdock5.setVisibility(View.INVISIBLE);
+        cdock5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cdock5.setVisibility(View.INVISIBLE);
+                viscdock5 = 0;
+            }
+        });
+        //Coffee dock 6
+        cdock6.setVisibility(View.INVISIBLE);
+        cdock6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cdock6.setVisibility(View.INVISIBLE);
+                viscdock6 = 0;
+            }
+        });
+
+        //Coffee dock 7
+        cdock7.setVisibility(View.INVISIBLE);
+        cdock7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cdock7.setVisibility(View.INVISIBLE);
+                viscdock7 = 0;
+            }
+        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -355,32 +432,12 @@ public boolean searchmenuopen=false;
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    void jeff(){
-
-        Toast.makeText(this,roomName,LENGTH_LONG).show();
-
-    }
-
     public void roomSwitch(){
 
         if ( roomName.equals("Anchorage")){
             roomName = "anchorage";
-            height = 0;
-            width = 0;
+            height = 50;
+            width = 50;
 
             isfree();
         }
@@ -388,88 +445,88 @@ public boolean searchmenuopen=false;
         else if ( roomName.equals( "Berlin")){
 
             roomName = "berlin";
-            height = 0;
-            width = 0;
+            height = 100;
+            width = 100;
             isfree() ;
         }
 
         else if ( roomName.equals( "Brasilia")){
 
             roomName = "brasilia";
-            height = 0;
-            width = 0;
+            height = 150;
+            width = 150;
             isfree() ;
         }
 
-        else if ( roomName.equals( "Buenosaires")){
+        else if ( roomName.equals( "Buenos Aires")){
 
             roomName = "buenosaires";
-            height = 0;
-            width = 0;
+            height = 200;
+            width = 200;
             isfree() ;
         }
 
         else if ( roomName.equals( "Canberra")){
 
             roomName = "canberra";
-            height = 0;
-            width = 0;
+            height = 250;
+            width = 250;
             isfree() ;
         }
 
-        else if ( roomName.equals( "Capetown")){
+        else if ( roomName.equals( "Cape Town")){
 
             roomName = "capetown";
-            height = 0;
-            width = 0;
+            height = 300;
+            width = 300;
             isfree() ;
         }
 
-        else if ( roomName.equals( "Demoroom")){
+        else if ( roomName.equals( "Demo Room")){
 
             roomName = "demoroom";
-            height = 0;
-            width = 0;
+            height = 350;
+            width = 350;
             isfree() ;
         }
 
         else if ( roomName.equals( "Helsinki")){
 
             roomName = "helsinki";
-            height = 0;
-            width = 0;
+            height = 400;
+            width = 400;
             isfree() ;
         }
 
         else if ( roomName.equals( "Honolulu")){
 
             roomName = "honolulu";
-            height = 0;
-            width = 0;
+            height = 450;
+            width = 450;
             isfree() ;
         }
 
         else if ( roomName.equals( "Jakarta")){
 
             roomName = "jakarta";
-            height = 0;
-            width = 0;
+            height = 500;
+            width = 500;
             isfree() ;
         }
 
         else if ( roomName.equals( "Kiev")){
 
             roomName = "kiev";
-            height = 0;
-            width = 0;
+            height = 550;
+            width = 550;
             isfree() ;
         }
 
-        else if ( roomName.equals( "Kualalumpur")){
+        else if ( roomName.equals( "Kuala Lumpur")){
 
             roomName = "kualalumpur";
-            height = 0;
-            width = 0;
+            height = 600;
+            width = 600;
 
             isfree() ;
         }
@@ -477,7 +534,7 @@ public boolean searchmenuopen=false;
         else if ( roomName.equals( "Larsmagnus")){
 
             roomName = "larsmagnus";
-            height = 0;
+            height = 6500;
             width = 0;
             isfree() ;
         }
@@ -554,7 +611,7 @@ public boolean searchmenuopen=false;
             isfree() ;
         }
 
-        else if ( roomName.equals( "Washingtondc")){
+        else if ( roomName.equals( "Washington DC")){
 
             roomName = "washingtondc";
             height = 0;
@@ -596,7 +653,14 @@ public boolean searchmenuopen=false;
         else if(visibleblue == 0){
             int blueHeigth = height;
             int blueWidth  = width;
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(blueWidth, blueHeigth, 0, 0);
+            bluePin.setLayoutParams(params);
 
+            bluePin.setVisibility(View.VISIBLE);
 
             visibleblue = 1;
         }
@@ -604,6 +668,14 @@ public boolean searchmenuopen=false;
             int redHeigth = height;
             int redWidth  = width;
 
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(redWidth, redHeigth, 0, 0);
+            redPin.setLayoutParams(params);
+
+            redPin.setVisibility(View.VISIBLE);
 
             visiblered = 1;
         }
@@ -611,6 +683,14 @@ public boolean searchmenuopen=false;
             int yellowHeigth = height;
             int yellowWidth  = width;
 
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(yellowWidth, yellowHeigth, 0, 0);
+            yellowPin.setLayoutParams(params);
+
+            yellowPin.setVisibility(View.VISIBLE);
 
             visibleyellow = 1;
         }
@@ -618,39 +698,139 @@ public boolean searchmenuopen=false;
             int cyanHeigth = height;
             int cyanWidth  = width;
 
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(cyanWidth, cyanHeigth, 0, 0);
+            cyanPin.setLayoutParams(params);
 
+            cyanPin.setVisibility(View.VISIBLE);
             visiblecyan = 1;
         }
         else if(visibleorange == 0){
             int orangeHeigth = height;
             int orangeWidth  = width;
 
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(orangeWidth,orangeHeigth, 0, 0);
+            orangePin.setLayoutParams(params);
 
+            orangePin.setVisibility(View.VISIBLE);
             visibleorange = 1;
         }
         else if(visiblepink == 0){
             int pinkHeigth = height;
             int pinkWidth  = width;
 
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(pinkWidth, pinkHeigth, 0, 0);
+            pinkPin.setLayoutParams(params);
 
+            pinkPin.setVisibility(View.VISIBLE);
             visiblepink = 1;
         }
         else if(visibleteal == 0){
             int tealHeigth = height;
             int tealWidth  = width;
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(tealWidth, tealHeigth, 0, 0);
+            tealPin.setLayoutParams(params);
 
+            tealPin.setVisibility(View.VISIBLE);
 
             visibleteal = 1;
         }
         else if(visiblepurple == 0){
             int purpleHeigth = height;
             int purpleWidth  = width;
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(purpleWidth, purpleHeigth, 0, 0);
+            purplePin.setLayoutParams(params);
 
+            purplePin.setVisibility(View.VISIBLE);
 
             visiblepurple = 1;
         }
-        else{}
+        else{
+
+            visiblered = 0;
+            visibleyellow = 0;
+            visibleblue = 0;
+            visiblegreen = 0;
+            visibleorange = 0;
+            visiblepurple = 0;
+            visibleteal = 0;
+            visiblepink = 0;
+            visiblecyan = 0;
+            isfree();
+        }
 
     }
 
+   public void coffeevis(){
+       viscdock1 = 1;
+       viscdock2 = 1;
+       viscdock3 = 1;
+       viscdock4 = 1;
+       viscdock5 = 1;
+       viscdock6 = 1;
+       viscdock7 = 1;
+       cdock1.setVisibility(View.VISIBLE);
+       cdock2.setVisibility(View.VISIBLE);
+       cdock3.setVisibility(View.VISIBLE);
+       cdock4.setVisibility(View.VISIBLE);
+       cdock5.setVisibility(View.VISIBLE);
+       cdock6.setVisibility(View.VISIBLE);
+       cdock7.setVisibility(View.VISIBLE);
+
+   }
+   public void clearALL(){
+       visiblered = 0;
+       visibleyellow = 0;
+       visibleblue = 0;
+       visiblegreen = 0;
+       visibleorange = 0;
+       visiblepurple = 0;
+       visibleteal = 0;
+       visiblepink = 0;
+       visiblecyan = 0;
+       redPin.setVisibility(View.INVISIBLE);
+       greenPin.setVisibility(View.INVISIBLE);
+       yellowPin.setVisibility(View.INVISIBLE);
+       bluePin.setVisibility(View.INVISIBLE);
+       orangePin.setVisibility(View.INVISIBLE);
+       purplePin.setVisibility(View.INVISIBLE);
+       tealPin.setVisibility(View.INVISIBLE);
+       cyanPin.setVisibility(View.INVISIBLE);
+       pinkPin.setVisibility(View.INVISIBLE);
+
+       viscdock1 = 0;
+       viscdock2 = 0;
+       viscdock3 = 0;
+       viscdock4 = 0;
+       viscdock5 = 0;
+       viscdock6 = 0;
+       viscdock7 = 0;
+       cdock1.setVisibility(View.INVISIBLE);
+       cdock2.setVisibility(View.INVISIBLE);
+       cdock3.setVisibility(View.INVISIBLE);
+       cdock4.setVisibility(View.INVISIBLE);
+       cdock5.setVisibility(View.INVISIBLE);
+       cdock6.setVisibility(View.INVISIBLE);
+       cdock7.setVisibility(View.INVISIBLE);
+
+   }
 }
