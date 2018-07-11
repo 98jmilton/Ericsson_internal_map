@@ -52,6 +52,23 @@ public class GroundFloorFunctions extends AppCompatActivity implements Navigatio
     public int viscdock6 = 0;
     public int viscdock7 = 0;
 
+    public int vistoilet1 = 0;
+    public int vistoilet2 = 0;
+    public int vistoilet3 = 0;
+    public int vistoilet4 = 0;
+    public int vistoilet5 = 0;
+    public int vistoilet6 = 0;
+    public int vistoilet7 = 0;
+
+    public int visprint1 = 0;
+    public int visprint2 = 0;
+    public int visprint3 = 0;
+    public int visprint4 = 0;
+    public int visprint5 = 0;
+    public int visprint6 = 0;
+    public int visprint7 = 0;
+
+
     public String roomName = "";
     public int height=0;
     public int width=0;
@@ -79,6 +96,23 @@ public boolean searchmenuopen=false;
     ImageButton cdock5;
     ImageButton cdock6;
     ImageButton cdock7;
+
+    ImageButton toilet1;
+    ImageButton toilet2;
+    ImageButton toilet3;
+    ImageButton toilet4;
+    ImageButton toilet5;
+    ImageButton toilet6;
+    ImageButton toilet7;
+
+    ImageButton print1;
+    ImageButton print2;
+    ImageButton print3;
+    ImageButton print4;
+    ImageButton print5;
+    ImageButton print6;
+    ImageButton print7;
+
 
     TextView QRmessage;
 
@@ -271,6 +305,153 @@ public boolean searchmenuopen=false;
             }
         });
 
+        toilet1      =(ImageButton) findViewById(R.id.toilet1);
+        toilet2      =(ImageButton) findViewById(R.id.toilet2);
+        toilet3      =(ImageButton) findViewById(R.id.toilet3);
+        toilet4      =(ImageButton) findViewById(R.id.toilet4);
+        toilet5      =(ImageButton) findViewById(R.id.toilet5);
+        toilet6      =(ImageButton) findViewById(R.id.toilet6);
+        toilet7      =(ImageButton) findViewById(R.id.toilet7);
+
+        //Toilet 1
+        toilet1.setVisibility(View.INVISIBLE);
+        toilet1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toilet1.setVisibility(View.INVISIBLE);
+                vistoilet1 = 0;
+            }
+        });
+        //Toilet 2
+        toilet2.setVisibility(View.INVISIBLE);
+        toilet2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toilet2.setVisibility(View.INVISIBLE);
+                vistoilet2 = 0;
+            }
+        });
+        //Toilet 3
+        toilet3.setVisibility(View.INVISIBLE);
+        toilet3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toilet3.setVisibility(View.INVISIBLE);
+                vistoilet3 = 0;
+            }
+        });
+        //Toilet 4
+        toilet4.setVisibility(View.INVISIBLE);
+        toilet4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toilet4.setVisibility(View.INVISIBLE);
+                vistoilet4 = 0;
+            }
+        });
+        //Toilet 5
+        toilet5.setVisibility(View.INVISIBLE);
+        toilet5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toilet5.setVisibility(View.INVISIBLE);
+                vistoilet5 = 0;
+            }
+        });
+        //Toilet 6
+        toilet6.setVisibility(View.INVISIBLE);
+        toilet6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toilet6.setVisibility(View.INVISIBLE);
+                vistoilet6 = 0;
+            }
+        });
+
+        //Toilet 7
+        toilet7.setVisibility(View.INVISIBLE);
+        toilet7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toilet7.setVisibility(View.INVISIBLE);
+                vistoilet7 = 0;
+            }
+        });
+
+
+        print1      =(ImageButton) findViewById(R.id.print1);
+        print2      =(ImageButton) findViewById(R.id.print2);
+        print3      =(ImageButton) findViewById(R.id.print3);
+        print4      =(ImageButton) findViewById(R.id.print4);
+        print5      =(ImageButton) findViewById(R.id.print5);
+        print6      =(ImageButton) findViewById(R.id.print6);
+        print7      =(ImageButton) findViewById(R.id.print7);
+
+        //Toilet 1
+        print1.setVisibility(View.INVISIBLE);
+        print1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                print1.setVisibility(View.INVISIBLE);
+                visprint1 = 0;
+            }
+        });
+        //Toilet 2
+        print2.setVisibility(View.INVISIBLE);
+        print2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                print2.setVisibility(View.INVISIBLE);
+                visprint2 = 0;
+            }
+        });
+        //Toilet 3
+        print3.setVisibility(View.INVISIBLE);
+        print3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                print3.setVisibility(View.INVISIBLE);
+                visprint3 = 0;
+            }
+        });
+        //Toilet 4
+        print4.setVisibility(View.INVISIBLE);
+        print4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                print4.setVisibility(View.INVISIBLE);
+                visprint4 = 0;
+            }
+        });
+        //Toilet 5
+        print5.setVisibility(View.INVISIBLE);
+        print5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                print5.setVisibility(View.INVISIBLE);
+                visprint5 = 0;
+            }
+        });
+        //Toilet 6
+        print6.setVisibility(View.INVISIBLE);
+        print6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                print6.setVisibility(View.INVISIBLE);
+                visprint6 = 0;
+            }
+        });
+
+        //Toilet 7
+        print7.setVisibility(View.INVISIBLE);
+        print7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                print7.setVisibility(View.INVISIBLE);
+                visprint7 = 0;
+            }
+        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -359,19 +540,19 @@ public boolean searchmenuopen=false;
 
         } else if (id == R.id.nav_coffee) {
 
-            //viscoffee();
+            viscoffee();
 
         } else if (id == R.id.nav_toilets) {
 
-           // vistoilets();
+            vistoilet();
 
         } else if (id == R.id.nav_printer) {
 
-            //visprint();
+            visprint();
 
         } else if (id ==R.id.nav_clear) {
 
-            //visclear();
+            clearALL();
 
         }
 
@@ -797,7 +978,7 @@ public boolean searchmenuopen=false;
 
     }
 
-   public void coffeevis(){
+   public void viscoffee(){
        viscdock1 = 1;
        viscdock2 = 1;
        viscdock3 = 1;
@@ -814,6 +995,43 @@ public boolean searchmenuopen=false;
        cdock7.setVisibility(View.VISIBLE);
 
    }
+
+   public void vistoilet(){
+       vistoilet1 = 1;
+       vistoilet2 = 1;
+       vistoilet3 = 1;
+       vistoilet4 = 1;
+       vistoilet5 = 1;
+       vistoilet6 = 1;
+       vistoilet7 = 1;
+       toilet1.setVisibility(View.VISIBLE);
+       toilet2.setVisibility(View.VISIBLE);
+       toilet3.setVisibility(View.VISIBLE);
+       toilet4.setVisibility(View.VISIBLE);
+       toilet5.setVisibility(View.VISIBLE);
+       toilet6.setVisibility(View.VISIBLE);
+       toilet7.setVisibility(View.VISIBLE);
+
+   }
+
+    public void visprint(){
+        visprint1 = 1;
+        visprint2 = 1;
+        visprint3 = 1;
+        visprint4 = 1;
+        visprint5 = 1;
+        visprint6 = 1;
+        visprint7 = 1;
+        print1.setVisibility(View.VISIBLE);
+        print2.setVisibility(View.VISIBLE);
+        print3.setVisibility(View.VISIBLE);
+        print4.setVisibility(View.VISIBLE);
+        print5.setVisibility(View.VISIBLE);
+        print6.setVisibility(View.VISIBLE);
+        print7.setVisibility(View.VISIBLE);
+
+    }
+
    public void clearALL(){
        visiblered = 0;
        visibleyellow = 0;
@@ -849,6 +1067,35 @@ public boolean searchmenuopen=false;
        cdock6.setVisibility(View.INVISIBLE);
        cdock7.setVisibility(View.INVISIBLE);
 
+       vistoilet1 = 0;
+       vistoilet2 = 0;
+       vistoilet3 = 0;
+       vistoilet4 = 0;
+       vistoilet5 = 0;
+       vistoilet6 = 0;
+       vistoilet7 = 0;
+       toilet1.setVisibility(View.INVISIBLE);
+       toilet2.setVisibility(View.INVISIBLE);
+       toilet3.setVisibility(View.INVISIBLE);
+       toilet4.setVisibility(View.INVISIBLE);
+       toilet5.setVisibility(View.INVISIBLE);
+       toilet6.setVisibility(View.INVISIBLE);
+       toilet7.setVisibility(View.INVISIBLE);
+
+       visprint1 = 0;
+       visprint2 = 0;
+       visprint3 = 0;
+       visprint4 = 0;
+       visprint5 = 0;
+       visprint6 = 0;
+       visprint7 = 0;
+       print1.setVisibility(View.INVISIBLE);
+       print2.setVisibility(View.INVISIBLE);
+       print3.setVisibility(View.INVISIBLE);
+       print4.setVisibility(View.INVISIBLE);
+       print5.setVisibility(View.INVISIBLE);
+       print6.setVisibility(View.INVISIBLE);
+       print7.setVisibility(View.INVISIBLE);
    }
 
     private String getValue(final Intent intent) {

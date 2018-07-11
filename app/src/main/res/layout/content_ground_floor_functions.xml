@@ -150,84 +150,254 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="41dp"
+                android:layout_marginStart="802dp"
+                android:layout_marginTop="539dp"
                 android:background="@null"
                 android:clickable="true"
                 android:gravity="top|start"
                 android:src="@drawable/ic_coffee" />
+
             <ImageButton
                 android:id="@+id/cdock2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="41dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="610dp"
+                android:layout_marginEnd="829dp"
                 android:background="@null"
                 android:clickable="true"
                 android:gravity="top|start"
                 android:src="@drawable/ic_coffee" />
+
             <ImageButton
                 android:id="@+id/cdock3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_above="@+id/toilet3"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="41dp"
+                android:layout_marginStart="75dp"
                 android:background="@null"
                 android:clickable="true"
                 android:gravity="top|start"
                 android:src="@drawable/ic_coffee" />
+
             <ImageButton
                 android:id="@+id/cdock4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_above="@+id/print7"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="41dp"
+                android:layout_marginBottom="-175dp"
+                android:layout_marginStart="334dp"
                 android:background="@null"
                 android:clickable="true"
                 android:gravity="top|start"
                 android:src="@drawable/ic_coffee" />
+
             <ImageButton
                 android:id="@+id/cdock5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="41dp"
+                android:layout_alignTop="@+id/print4"
+                android:layout_toEndOf="@+id/cdock6"
                 android:background="@null"
                 android:clickable="true"
                 android:gravity="top|start"
                 android:src="@drawable/ic_coffee" />
+
             <ImageButton
                 android:id="@+id/cdock6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="41dp"
+                android:layout_alignTop="@+id/pin_green"
+                android:layout_toStartOf="@+id/cdock7"
                 android:background="@null"
                 android:clickable="true"
                 android:gravity="top|start"
                 android:src="@drawable/ic_coffee" />
+
             <ImageButton
                 android:id="@+id/cdock7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="42dp"
-                android:layout_marginTop="41dp"
+                android:layout_below="@+id/toilet5"
+                android:layout_toEndOf="@+id/print2"
                 android:background="@null"
                 android:clickable="true"
                 android:gravity="top|start"
                 android:src="@drawable/ic_coffee" />
+
+            <ImageButton
+                android:id="@+id/toilet1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="120dp"
+                android:layout_toEndOf="@+id/print7"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_wc" />
+
+            <ImageButton
+                android:id="@+id/toilet2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toilet3"
+                android:layout_marginEnd="-109dp"
+                android:layout_toStartOf="@+id/print1"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_wc" />
+
+            <ImageButton
+                android:id="@+id/toilet3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/toilet7"
+                android:layout_alignTop="@+id/print1"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_wc" />
+
+            <ImageButton
+                android:id="@+id/toilet4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/print3"
+                android:layout_alignTop="@+id/pin_green"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_wc" />
+
+            <ImageButton
+                android:id="@+id/toilet5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/toilet6"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="157dp"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_wc" />
+
+            <ImageButton
+                android:id="@+id/toilet6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/pin_green"
+                android:layout_alignTop="@+id/print3"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_wc" />
+
+            <ImageButton
+                android:id="@+id/toilet7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="51dp"
+                android:layout_toEndOf="@+id/print6"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_wc" />
+
+            <ImageButton
+                android:id="@+id/print1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="109dp"
+                android:layout_marginTop="218dp"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_printer" />
+
+            <ImageButton
+                android:id="@+id/print2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pin_green"
+                android:layout_toEndOf="@+id/print4"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_printer" />
+
+            <ImageButton
+                android:id="@+id/print3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/print6"
+                android:layout_marginBottom="-259dp"
+                android:layout_marginEnd="-269dp"
+                android:layout_toStartOf="@+id/print4"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_printer" />
+
+            <ImageButton
+                android:id="@+id/print4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="269dp"
+                android:layout_marginTop="86dp"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_printer" />
+
+            <ImageButton
+                android:id="@+id/print5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="286dp"
+                android:layout_marginTop="137dp"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_printer" />
+
+            <ImageButton
+                android:id="@+id/print6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="170dp"
+                android:layout_marginTop="259dp"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_printer" />
+
+            <ImageButton
+                android:id="@+id/print7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="208dp"
+                android:layout_marginTop="175dp"
+                android:background="@null"
+                android:clickable="true"
+                android:gravity="top|start"
+                android:src="@drawable/ic_printer" />
+
         </RelativeLayout>
     </com.otaliastudios.zoom.ZoomLayout>
 
@@ -267,6 +437,5 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="TextView"
-        android:textColor="#FF5733"
-        />
+        android:textColor="#FF5733" />
 </RelativeLayout>
