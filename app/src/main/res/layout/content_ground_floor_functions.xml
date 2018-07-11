@@ -251,9 +251,12 @@
         <ListView
             android:id="@+id/searchlistitems"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="145dp"
             android:background="#FFFFFF"
-            android:visibility="invisible"></ListView>
+            android:visibility="invisible"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="0dp">
+        </ListView>
 
     </LinearLayout>
 

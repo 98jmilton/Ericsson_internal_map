@@ -21,5 +21,9 @@
             android:id="@+id/nav_printer"
             android:icon="@drawable/ic_printer"
             android:title="Printers" />
+        <item
+            android:id="@+id/nav_clear"
+            android:icon="@drawable/ic_baseline_clear_24px"
+            android:title="Clear All" />
     </group>
 </menu>

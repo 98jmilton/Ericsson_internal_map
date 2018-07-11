@@ -363,6 +363,8 @@ public boolean searchmenuopen=false;
 
         } else if (id == R.id.nav_printer) {
 
+        } else if (id ==R.id.nav_clear) {
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
