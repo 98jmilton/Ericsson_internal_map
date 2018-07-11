@@ -80,11 +80,18 @@ public boolean searchmenuopen=false;
     ImageButton cdock6;
     ImageButton cdock7;
 
+    TextView QRmessage;
+
+    private final static String ERROR_MESSAGE = "Unable to scan bar code";
+
     //open/close navigation drawer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ground_floor_functions);
+
+        QRmessage = (TextView) findViewById(R.id.textView3);
+        QRmessage.setText(getValue(getIntent()));
 
         //navigation drawer toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -833,4 +840,16 @@ public boolean searchmenuopen=false;
        cdock7.setVisibility(View.INVISIBLE);
 
    }
+
+    private String getValue(final Intent intent) {
+        try {
+            final String barCodeString = intent.getExtras().getString(Constants.SCAN_BAR_TEST_KEY);
+
+            return barCodeString != null ? barCodeString : ERROR_MESSAGE;
+
+        } catch (final Exception e) {
+            e.printStackTrace();
+        }
+        return ERROR_MESSAGE;
+    }
 }
