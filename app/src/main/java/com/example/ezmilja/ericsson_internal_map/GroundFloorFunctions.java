@@ -3,6 +3,8 @@ package com.example.ezmilja.ericsson_internal_map;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -114,7 +116,7 @@ public boolean searchmenuopen=false;
     ImageButton print7;
 
 
-    TextView QRmessage;
+    public TextView QRmessage;
 
     private final static String ERROR_MESSAGE = "Unable to scan bar code";
 
@@ -122,10 +124,7 @@ public boolean searchmenuopen=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ground_floor_functions);
-
-        QRmessage = (TextView) findViewById(R.id.textView3);
-        QRmessage.setText(getValue(getIntent()));
+        setContentView(R.layout.app_bar_ground_floor_functions);
 
         //navigation drawer toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -451,15 +450,6 @@ public boolean searchmenuopen=false;
                 visprint7 = 0;
             }
         });
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
     }
 
 
@@ -485,12 +475,10 @@ public boolean searchmenuopen=false;
         // WHEN AN ITEM IS CLICKED ON THE LISTVIEW
         searchlistitems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView <? > arg0, View view, int position, long id) {
-                // When clicked, show a toast with the TextView text
                 searchlistitems.setVisibility(View.INVISIBLE);
                 roomName= (String) ((TextView) view).getText();
                 roomSwitch();
             }
-
         });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -555,9 +543,6 @@ public boolean searchmenuopen=false;
             clearALL();
 
         }
-
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
@@ -617,11 +602,7 @@ public boolean searchmenuopen=false;
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        }
-        else if (searchmenuopen == true) {
+        if (searchmenuopen == true) {
             searchlistitems.setVisibility(View.INVISIBLE);
             searchmenuopen = false;
         }

@@ -2,10 +2,37 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/searchlist"
-    android:title="Search"
-    android:icon="@android:drawable/ic_menu_search"
-    app:actionViewClass="android.widget.SearchView"
-    app:showAsAction="always"
-    />
+    <item
+        android:id="@+id/searchlist"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/nav_camera"
+        android:icon="@drawable/ic_camera"
+        android:title="QR Scanner"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/nav_coffee"
+        android:icon="@drawable/ic_coffee"
+        android:title="Coffee Docks"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/nav_toilets"
+        android:icon="@drawable/ic_wc"
+        android:title="Toilets"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/nav_printer"
+        android:icon="@drawable/ic_printer"
+        android:title="Printers"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/nav_clear"
+        android:icon="@drawable/ic_clearall"
+        android:title="Clear All"
+        app:showAsAction="always"/>
 </menu>
