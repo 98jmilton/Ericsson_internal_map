@@ -34,7 +34,7 @@ import com.otaliastudios.zoom.ZoomLogger;
 
 import static android.widget.Toast.LENGTH_LONG;
 
-public class GroundFloorFunctions extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class GroundFloorFunctions extends AppCompatActivity {
 
     public int visiblered = 0;
     public int visibleyellow= 0;
@@ -116,6 +116,14 @@ public boolean searchmenuopen=false;
     ImageButton print7;
 
 
+    ImageButton TBCamera;
+    ImageButton TBCoffee;
+    ImageButton TBToilets;
+    ImageButton TBPrinters;
+    ImageButton TBClearAll;
+
+
+
     public TextView QRmessage;
 
     private final static String ERROR_MESSAGE = "Unable to scan bar code";
@@ -125,6 +133,8 @@ public boolean searchmenuopen=false;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_ground_floor_functions);
+
+
 
         //navigation drawer toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -459,6 +469,10 @@ public boolean searchmenuopen=false;
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater inflater= getMenuInflater();
+
+
+
+
         inflater.inflate(R.menu.searchmenu, menu);
         MenuItem item = menu.findItem(R.id.searchlist);
         final SearchView searchView = (SearchView)item.getActionView();
@@ -514,6 +528,7 @@ public boolean searchmenuopen=false;
         return super.onCreateOptionsMenu(menu);
     }
 
+    /*
     //item functions within navigation drawer
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -545,6 +560,8 @@ public boolean searchmenuopen=false;
         }
         return true;
     }
+
+    */
 
     //popup menu
     public void onClick(View anchor) {
@@ -1098,4 +1115,31 @@ public boolean searchmenuopen=false;
         }
         return ERROR_MESSAGE;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.nav_camera:
+                Intent intent = new Intent(GroundFloorFunctions.this, ScanActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.nav_coffee:
+          viscoffee();
+                return true;
+            case R.id.nav_toilets:
+vistoilet();
+                return true;
+            case R.id.nav_printer:
+visprint();
+                return true;
+            case R.id.nav_clear:
+clearALL();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 }
