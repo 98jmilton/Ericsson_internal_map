@@ -984,58 +984,111 @@ public boolean searchmenuopen=false;
 
     }
 
-   public void viscoffee(){
-       viscdock1 = 1;
-       viscdock2 = 1;
-       viscdock3 = 1;
-       viscdock4 = 1;
-       viscdock5 = 1;
-       viscdock6 = 1;
-       viscdock7 = 1;
-       cdock1.setVisibility(View.VISIBLE);
-       cdock2.setVisibility(View.VISIBLE);
-       cdock3.setVisibility(View.VISIBLE);
-       cdock4.setVisibility(View.VISIBLE);
-       cdock5.setVisibility(View.VISIBLE);
-       cdock6.setVisibility(View.VISIBLE);
-       cdock7.setVisibility(View.VISIBLE);
+    public void viscoffee()
+    { if (viscdock1==1 || viscdock2==1 || viscdock3==1 || viscdock4==1 || viscdock5==1 || viscdock6==1 || viscdock7==1) {
+        viscdock1 = 0;
+        viscdock2 = 0;
+        viscdock3 = 0;
+        viscdock4 = 0;
+        viscdock5 = 0;
+        viscdock6 = 0;
+        viscdock7 = 0;
+        cdock1.setVisibility(View.INVISIBLE);
+        cdock2.setVisibility(View.INVISIBLE);
+        cdock3.setVisibility(View.INVISIBLE);
+        cdock4.setVisibility(View.INVISIBLE);
+        cdock5.setVisibility(View.INVISIBLE);
+        cdock6.setVisibility(View.INVISIBLE);
+        cdock7.setVisibility(View.INVISIBLE);
+    }
+    else {
+        viscdock1 = 1;
+        viscdock2 = 1;
+        viscdock3 = 1;
+        viscdock4 = 1;
+        viscdock5 = 1;
+        viscdock6 = 1;
+        viscdock7 = 1;
+        cdock1.setVisibility(View.VISIBLE);
+        cdock2.setVisibility(View.VISIBLE);
+        cdock3.setVisibility(View.VISIBLE);
+        cdock4.setVisibility(View.VISIBLE);
+        cdock5.setVisibility(View.VISIBLE);
+        cdock6.setVisibility(View.VISIBLE);
+        cdock7.setVisibility(View.VISIBLE);
+    }
+    }
 
-   }
+    public void vistoilet(){
+         if (vistoilet1==1 || vistoilet2==1 || vistoilet3==1 || vistoilet4==1 || vistoilet5==1 || vistoilet6==1 || vistoilet7==1) {
+            vistoilet1 = 0;
+            vistoilet2 = 0;
+            vistoilet3 = 0;
+            vistoilet4 = 0;
+            vistoilet5 = 0;
+            vistoilet6 = 0;
+            vistoilet7 = 0;
+            toilet1.setVisibility(View.INVISIBLE);
+            toilet2.setVisibility(View.INVISIBLE);
+            toilet3.setVisibility(View.INVISIBLE);
+            toilet4.setVisibility(View.INVISIBLE);
+            toilet5.setVisibility(View.INVISIBLE);
+            toilet6.setVisibility(View.INVISIBLE);
+            toilet7.setVisibility(View.INVISIBLE);
+        }
+        else {
+            vistoilet1 = 1;
+            vistoilet2 = 1;
+            vistoilet3 = 1;
+            vistoilet4 = 1;
+            vistoilet5 = 1;
+            vistoilet6 = 1;
+            vistoilet7 = 1;
+            toilet1.setVisibility(View.VISIBLE);
+            toilet2.setVisibility(View.VISIBLE);
+            toilet3.setVisibility(View.VISIBLE);
+            toilet4.setVisibility(View.VISIBLE);
+            toilet5.setVisibility(View.VISIBLE);
+            toilet6.setVisibility(View.VISIBLE);
+            toilet7.setVisibility(View.VISIBLE);
+        }
+        }
 
-   public void vistoilet(){
-       vistoilet1 = 1;
-       vistoilet2 = 1;
-       vistoilet3 = 1;
-       vistoilet4 = 1;
-       vistoilet5 = 1;
-       vistoilet6 = 1;
-       vistoilet7 = 1;
-       toilet1.setVisibility(View.VISIBLE);
-       toilet2.setVisibility(View.VISIBLE);
-       toilet3.setVisibility(View.VISIBLE);
-       toilet4.setVisibility(View.VISIBLE);
-       toilet5.setVisibility(View.VISIBLE);
-       toilet6.setVisibility(View.VISIBLE);
-       toilet7.setVisibility(View.VISIBLE);
 
-   }
+        public void visprint() {
+            if (visprint1==1 || visprint2==1 || visprint3==1 || visprint4==1 || visprint5==1 || visprint6==1 || visprint7==1) {
+                visprint1 = 0;
+                visprint2 = 0;
+                visprint3 = 0;
+                visprint4 = 0;
+                visprint5 = 0;
+                visprint6 = 0;
+                visprint7 = 0;
+                print1.setVisibility(View.INVISIBLE);
+                print2.setVisibility(View.INVISIBLE);
+                print3.setVisibility(View.INVISIBLE);
+                print4.setVisibility(View.INVISIBLE);
+                print5.setVisibility(View.INVISIBLE);
+                print6.setVisibility(View.INVISIBLE);
+                print7.setVisibility(View.INVISIBLE);
+            }
 
-    public void visprint(){
-        visprint1 = 1;
-        visprint2 = 1;
-        visprint3 = 1;
-        visprint4 = 1;
-        visprint5 = 1;
-        visprint6 = 1;
-        visprint7 = 1;
-        print1.setVisibility(View.VISIBLE);
-        print2.setVisibility(View.VISIBLE);
-        print3.setVisibility(View.VISIBLE);
-        print4.setVisibility(View.VISIBLE);
-        print5.setVisibility(View.VISIBLE);
-        print6.setVisibility(View.VISIBLE);
-        print7.setVisibility(View.VISIBLE);
-
+                else {
+                    visprint1 = 1;
+                    visprint2 = 1;
+                    visprint3 = 1;
+                    visprint4 = 1;
+                    visprint5 = 1;
+                    visprint6 = 1;
+                    visprint7 = 1;
+                    print1.setVisibility(View.VISIBLE);
+                    print2.setVisibility(View.VISIBLE);
+                    print3.setVisibility(View.VISIBLE);
+                    print4.setVisibility(View.VISIBLE);
+                    print5.setVisibility(View.VISIBLE);
+                    print6.setVisibility(View.VISIBLE);
+                    print7.setVisibility(View.VISIBLE);
+                }
     }
 
    public void clearALL(){
